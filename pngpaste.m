@@ -103,15 +103,15 @@ getBitmapImageFileTypeFromFilename (NSString *filename)
     static NSDictionary *lookup;
     if (lookup == nil) {
         lookup = @{
-            @"gif": [NSNumber numberWithInt:NSBitmapImageFileTypeGIF],
-            @"jpeg": [NSNumber numberWithInt:NSBitmapImageFileTypeJPEG],
-            @"jpg": [NSNumber numberWithInt:NSBitmapImageFileTypeJPEG],
-            @"png": [NSNumber numberWithInt:NSBitmapImageFileTypePNG],
-            @"tif": [NSNumber numberWithInt:NSBitmapImageFileTypeTIFF],
-            @"tiff": [NSNumber numberWithInt:NSBitmapImageFileTypeTIFF],
+            @"gif": [NSNumber numberWithInt:NSGIFFileType],
+            @"jpeg": [NSNumber numberWithInt:NSJPEGFileType],
+            @"jpg": [NSNumber numberWithInt:NSJPEGFileType],
+            @"png": [NSNumber numberWithInt:NSPNGFileType],
+            @"tif": [NSNumber numberWithInt:NSTIFFFileType],
+            @"tiff": [NSNumber numberWithInt:NSTIFFFileType],
         };
     }
-    NSBitmapImageFileType bitmapImageFileType = NSBitmapImageFileTypePNG;
+    NSBitmapImageFileType bitmapImageFileType = NSPNGFileType;
     if (filename != nil) {
         NSArray *words = [filename componentsSeparatedByString:@"."];
         NSUInteger len = [words count];
